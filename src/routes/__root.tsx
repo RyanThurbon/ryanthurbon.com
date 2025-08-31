@@ -1,0 +1,86 @@
+import { PageLayout } from "@/components/layouts/page-layout";
+import { Navbar } from "@/components/shared/navbar";
+import appCss from "@/styles.css?url";
+import type { QueryClient } from "@tanstack/react-query";
+import { createRootRouteWithContext, HeadContent, Scripts } from "@tanstack/react-router";
+import { ReactNode } from "react";
+import { Toaster } from "@/components/ui/sonner.tsx";
+import { getAuthQueryOptions } from "@/queries/auth/get-auth-query.ts";
+import { Footer } from "@/components/shared/footer.tsx";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+interface IRouterContext {
+    queryClient: QueryClient;
+}
+
+export const Route = createRootRouteWithContext<IRouterContext>()({
+    head: () => ({
+        meta: [
+            {
+                charSet: "utf-8",
+            },
+            {
+                name: "viewport",
+                content: "width=device-width, initial-scale=1",
+            },
+        ],
+        links: [
+            {
+                rel: "stylesheet",
+                href: appCss,
+            },
+            {
+                rel: "preconnect",
+                href: "https://fonts.googleapis.com",
+            },
+            {
+                rel: "preconnect",
+                href: "https://fonts.gstatic.com",
+                crossOrigin: "anonymous",
+            },
+            {
+                rel: "stylesheet",
+                href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+            },
+            {
+                rel: "stylesheet",
+                href: "https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap",
+            },
+        ],
+    }),
+    beforeLoad: async ({ context }) => {
+        const auth = await context.queryClient.ensureQueryData(getAuthQueryOptions());
+
+        return {
+            auth
+        };
+    },
+    shellComponent: RootDocument,
+});
+
+function RootDocument({ children }: { children: ReactNode }) {
+    return (
+        <html lang="en">
+        <head>
+            <title>Ryan Thurbon</title>
+            <HeadContent/>
+        </head>
+        <body className="flex min-h-screen bg-black">
+        <PageLayout>
+            <div className="flex flex-col h-full w-full">
+                <main className="flex-1">
+                    <Navbar/>
+                    <div className="mt-24 md:mt-28 gap-y-10">
+                        {children}
+                    </div>
+                </main>
+                <Footer/>
+            </div>
+        </PageLayout>
+        <Toaster position="bottom-center" duration={3000} richColors/>
+        <ReactQueryDevtools/>
+        <Scripts/>
+        </body>
+        </html>
+    );
+}
