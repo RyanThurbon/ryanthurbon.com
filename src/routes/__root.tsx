@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/sonner.tsx";
 import { getAuthQueryOptions } from "@/queries/auth/get-auth-query.ts";
 import { Footer } from "@/components/shared/footer.tsx";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 interface IRouterContext {
     queryClient: QueryClient;
