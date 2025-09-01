@@ -1,5 +1,6 @@
 import { defineConfig } from "drizzle-kit";
 import { config } from "dotenv";
+import { env } from "@/env.ts";
 
 config({ path: ".env" });
 
@@ -11,6 +12,6 @@ export default defineConfig({
     ],
     out: "./src/lib/db/migrations",
     dbCredentials: {
-        url: process.env.SUPABASE_DATABASE_URL!
+        url: env.SUPABASE_DATABASE_URL
     }
 });

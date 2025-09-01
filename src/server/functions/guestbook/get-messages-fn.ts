@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { db } from "@/lib/db";
 import { guestbook } from "@/lib/db/schemas/guestbook-schema.ts";
+import { desc } from "drizzle-orm";
 
 export const $getMessagesServerFn = createServerFn({ method: "GET" })
     .handler(async () => {
@@ -13,7 +14,7 @@ export const $getMessagesServerFn = createServerFn({ method: "GET" })
                     createdAt: guestbook.createdAt
                 })
                 .from(guestbook)
-                .orderBy(guestbook.createdAt);
+                .orderBy(desc(guestbook.createdAt));
         } catch (error) {
             console.error((error as Error).message);
             throw new Error("Unable to fetch all guestbook messages");

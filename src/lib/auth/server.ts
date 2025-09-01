@@ -3,6 +3,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/lib/db";
 import { account, session, user, verification } from "@/lib/db/schemas/auth-schema.ts";
 import { reactStartCookies } from "better-auth/react-start";
+import { env } from "@/env.ts";
 
 export const authServer = betterAuth({
     database: drizzleAdapter(db, {
@@ -16,8 +17,8 @@ export const authServer = betterAuth({
     }),
     socialProviders: {
         github: {
-            clientId: process.env.GITHUB_CLIENT_ID as string,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+            clientId: env.GITHUB_CLIENT_ID,
+            clientSecret: env.GITHUB_CLIENT_SECRET,
             scope: ["read:user"]
         }
     },
