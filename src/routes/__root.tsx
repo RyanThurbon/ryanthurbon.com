@@ -7,7 +7,8 @@ import { ReactNode } from "react";
 import { Toaster } from "@/components/ui/sonner.tsx";
 import { getAuthQueryOptions } from "@/queries/auth/get-auth-query.ts";
 import { Footer } from "@/components/shared/footer.tsx";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 interface IRouterContext {
     queryClient: QueryClient;
@@ -52,7 +53,7 @@ export const Route = createRootRouteWithContext<IRouterContext>()({
         const auth = await context.queryClient.ensureQueryData(getAuthQueryOptions());
 
         return {
-            auth
+            auth,
         };
     },
     shellComponent: RootDocument,
@@ -61,26 +62,25 @@ export const Route = createRootRouteWithContext<IRouterContext>()({
 function RootDocument({ children }: { children: ReactNode }) {
     return (
         <html lang="en">
-        <head>
-            <title>Ryan Thurbon</title>
-            <HeadContent/>
-        </head>
-        <body className="flex min-h-screen bg-black">
-        <PageLayout>
-            <div className="flex flex-col h-full w-full">
-                <main className="flex-1">
-                    <Navbar/>
-                    <div className="mt-24 md:mt-28 gap-y-10">
-                        {children}
+            <head>
+                <title>Ryan Thurbon</title>
+                <HeadContent />
+            </head>
+            <body className="flex min-h-screen bg-black">
+                <PageLayout>
+                    <div className="flex flex-col h-full w-full">
+                        <main className="flex-1">
+                            <Navbar />
+                            <div className="mt-24 md:mt-28 gap-y-10">{children}</div>
+                        </main>
+                        <Footer />
                     </div>
-                </main>
-                <Footer/>
-            </div>
-        </PageLayout>
-        <Toaster position="bottom-center" duration={3000} richColors/>
-        <ReactQueryDevtools/>
-        <Scripts/>
-        </body>
+                </PageLayout>
+                <Toaster position="bottom-center" duration={3000} richColors />
+                <Analytics />
+                <SpeedInsights />
+                <Scripts />
+            </body>
         </html>
     );
 }
