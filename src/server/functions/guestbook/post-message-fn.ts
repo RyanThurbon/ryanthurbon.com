@@ -5,13 +5,11 @@ import { guestbook } from "@/lib/db/schemas/guestbook-schema.ts";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
 
-export const GUESTBOOK_ENTRY_LIMIT_REACHED = "GUESTBOOK_ENTRY_LIMIT_REACHED";
-
 export const postMessageFormSchema = z.object({
     message: z
         .string()
         .min(2, "Message must be a minimum of 2 characters")
-        .max(200, "Message must be a maximum of 200 characters")
+        .max(200, "Message must be a maximum of 200 characters"),
 });
 
 export const $postMessageServerFn = createServerFn({ method: "POST" })
@@ -20,16 +18,25 @@ export const $postMessageServerFn = createServerFn({ method: "POST" })
     .handler(async ({ context, data }) => {
         const { user } = context;
 
-        const [guestbookEntryExists] = await db
-            .select({
-                userId: guestbook.userId
-            })
-            .from(guestbook)
-            .where(eq(guestbook.userId, user.id))
-            .limit(1);
+        try {
+            const [guestbookEntryExists] = await db
+                .select({
+                    userId: guestbook.userId,
+                })
+                .from(guestbook)
+                .where(eq(guestbook.userId, user.id))
+                .limit(1);
 
-        if (guestbookEntryExists) {
-            throw new Error(GUESTBOOK_ENTRY_LIMIT_REACHED);
+            if (guestbookEntryExists) {
+                return {
+                    success: false,
+                    message: "You have already signed the guestbook",
+                    data: null,
+                };
+            }
+        } catch (error) {
+            console.error(error);
+            throw new Error("Failed to check for duplicate guestbook entry");
         }
 
         try {
@@ -45,10 +52,15 @@ export const $postMessageServerFn = createServerFn({ method: "POST" })
                 .returning({
                     name: guestbook.name,
                     email: guestbook.email,
-                    message: guestbook.message
+                    message: guestbook.message,
+                    createdAt: guestbook.createdAt,
                 });
 
-            return guestbookEntry;
+            return {
+                success: true,
+                message: "Signed the guestbook!",
+                data: guestbookEntry,
+            };
         } catch (error) {
             console.error(error);
             throw new Error("Failed to insert guestbook entry");
