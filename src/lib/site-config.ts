@@ -64,7 +64,7 @@ export const siteConfig = {
             logo: "/microsoft-logo.jpg",
         },
         {
-            name: "Entry-Level python developer",
+            name: "Entry-Level Python Progrmmer",
             description: "Open Education & Development Group",
             domain: "verify.openedg.org",
             url: "https://verify.openedg.org/",
@@ -86,7 +86,7 @@ export const siteConfig = {
         {
             name: "Sutherland High School",
             url: "https://www.sutherlandhs.co.za/",
-            qualification: "Matric Diploma",
+            qualification: "National Senior Certificate",
             duration: "2018 - 2022",
             durationInYears: 5,
             logo: "/shs-logo.jpg",
