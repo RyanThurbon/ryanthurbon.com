@@ -2,6 +2,7 @@ import { DesktopNavbar } from "@/components/shared/navbar/desktop";
 import { MobileNavbar } from "@/components/shared/navbar/mobile";
 import { Link, LinkOptions, useRouterState } from "@tanstack/react-router";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar.tsx";
+import { siteConfig } from "@/lib/site-config.ts";
 
 export type Nav = {
     label: string;
@@ -29,7 +30,7 @@ export const nav: Nav[] = [
 
 export function Navbar() {
     const location = useRouterState({
-        select: (state) => state.location
+        select: (state) => state.location,
     });
 
     const isHomePage = location.pathname === "/";
@@ -39,14 +40,14 @@ export function Navbar() {
             {!isHomePage && (
                 <Link to="/" aria-label="Home" className="absolute left-0">
                     <Avatar className="size-10">
-                        <AvatarImage src="/github.png" alt="Ryan's GitHub profile picture"/>
+                        <AvatarImage src={siteConfig.githubProfileImage} alt="Ryan's github profile image" />
                         <AvatarFallback>RT</AvatarFallback>
                     </Avatar>
                 </Link>
             )}
             <nav className="px-3 py-1 rounded-full border bg-secondary">
-                <DesktopNavbar nav={nav}/>
-                <MobileNavbar nav={nav}/>
+                <DesktopNavbar nav={nav} />
+                <MobileNavbar nav={nav} />
             </nav>
         </header>
     );

@@ -1,55 +1,56 @@
 export type SocialsConfig = {
-    github: string,
-    linkedIn: string,
-    gmail: string,
-}
+    github: string;
+    linkedIn: string;
+    gmail: string;
+};
 
 export type AchievementConfig = {
-    name: string,
-    description: string,
-    domain: string,
-    url: string,
-    verificationCode: string,
-    duration: string,
-    durationInYears: number,
-    logo: string,
-}
+    name: string;
+    description: string;
+    domain: string;
+    url: string;
+    verificationCode: string;
+    duration: string;
+    durationInYears: number;
+    logo: string;
+};
 
 export type EducationConfig = {
-    name: string,
-    url: string,
-    qualification: string,
-    duration: string,
-    durationInYears: number,
-    logo: string,
-}
+    name: string;
+    url: string;
+    qualification: string;
+    duration: string;
+    durationInYears: number;
+    logo: string;
+};
 
 export type JobConfig = {
-    name: string,
-    url: string,
-    role: string,
-    duration: string,
-    durationInYears: number,
-    logo: string,
-}
+    name: string;
+    url: string;
+    role: string;
+    duration: string;
+    durationInYears: number;
+    logo: string;
+};
 
 export type ToolboxConfig = {
-    name: string,
-    href: string,
-    description: string,
-    stackCategory: string[],
-    svg: string,
-}
+    name: string;
+    href: string;
+    description: string;
+    stackCategory: string[];
+    svg: string;
+};
 
 export const siteConfig = {
     openToWork: true,
     location: "Cape Town, South Africa",
-    profilePicture: "https://github.com/ryanthurbon.png",
+    portraitSrc: "/portrait.jpg",
+    githubProfileImage: "/github.png",
     siteSource: "https://github.com/RyanThurbon/ryanthurbon.com",
     socials: {
         github: "https://github.com/RyanThurbon",
         gmail: "ryanthurbon3@gmail.com",
-        linkedIn: "https://linkedin.com/in/ryan-thurbon-54438527a",
+        linkedIn: "https://linkedin.com/in/ryan-thurbon",
     } satisfies SocialsConfig,
     achievements: [
         {
@@ -60,7 +61,7 @@ export const siteConfig = {
             verificationCode: "bQeT-s28V",
             duration: "2019 - 2020",
             durationInYears: 1,
-            logo: "/microsoft-logo.jpg"
+            logo: "/microsoft-logo.jpg",
         },
         {
             name: "Entry-Level python developer",
@@ -70,7 +71,7 @@ export const siteConfig = {
             verificationCode: "FjC4.afZD.sLMK",
             duration: "2020 - 2021",
             durationInYears: 1,
-            logo: "/pcep-logo.jpg"
+            logo: "/pcep-logo.jpg",
         },
     ] satisfies AchievementConfig[],
     education: [
