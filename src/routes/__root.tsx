@@ -5,10 +5,10 @@ import type { QueryClient } from "@tanstack/react-query";
 import { createRootRouteWithContext, HeadContent, Scripts } from "@tanstack/react-router";
 import { ReactNode } from "react";
 import { Toaster } from "@/components/ui/sonner.tsx";
-import { getAuthQueryOptions } from "@/queries/auth/get-auth-query.ts";
 import { Footer } from "@/components/shared/footer.tsx";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 interface IRouterContext {
     queryClient: QueryClient;
@@ -49,13 +49,6 @@ export const Route = createRootRouteWithContext<IRouterContext>()({
             },
         ],
     }),
-    beforeLoad: async ({ context }) => {
-        const auth = await context.queryClient.ensureQueryData(getAuthQueryOptions());
-
-        return {
-            auth,
-        };
-    },
     shellComponent: RootDocument,
 });
 
@@ -79,6 +72,7 @@ function RootDocument({ children }: { children: ReactNode }) {
                 <Toaster position="bottom-center" duration={3000} richColors />
                 <Analytics />
                 <SpeedInsights />
+                <ReactQueryDevtools />
                 <Scripts />
             </body>
         </html>

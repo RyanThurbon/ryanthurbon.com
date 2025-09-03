@@ -4,6 +4,7 @@ import { guestbook } from "@/lib/db/schemas/guestbook-schema.ts";
 import { desc } from "drizzle-orm";
 
 export const $getMessagesServerFn = createServerFn({ method: "GET" }).handler(async () => {
+    //TODO pagination eventually when needed
     try {
         return await db
             .select({

@@ -14,6 +14,7 @@ export const createRouter = () => {
         Wrap: (props: { children: ReactNode }) => {
             return <TanstackQuery.Provider {...rqContext}>{props.children}</TanstackQuery.Provider>;
         },
+        scrollRestoration: false,
     });
 
     setupRouterSsrQueryIntegration({ router, queryClient: rqContext.queryClient });

@@ -20,8 +20,8 @@ export function GuestbookSignOut() {
             <DropdownMenu>
                 <DropdownMenuTrigger className="hover:cursor-pointer" aria-label="Open menu" asChild>
                     <div className="flex items-center gap-x-2 text-muted-foreground">
-                        <Avatar className="size-6 hidden md:block">
-                            <AvatarImage src={user.image || ""} alt={`${user.name}'s github profile picture`}/>
+                        <Avatar className="size-6">
+                            <AvatarImage src={user.image || ""} alt={`${user.name}'s github profile picture`} />
                             <AvatarFallback>{user.name[0]}</AvatarFallback>
                         </Avatar>
                         <div className="text-base md:text-sm flex items-center gap-x-2 min-w-0 flex-1">
@@ -29,10 +29,8 @@ export function GuestbookSignOut() {
                                 "Signing out..."
                             ) : (
                                 <>
-                                    <span className="truncate">
-                                       {user.name}
-                                    </span>
-                                    <ChevronDownIcon className="size-4 flex-shrink-0"/>
+                                    <span className="truncate">{user.name}</span>
+                                    <ChevronDownIcon className="size-4 flex-shrink-0" />
                                 </>
                             )}
                         </div>
@@ -40,8 +38,10 @@ export function GuestbookSignOut() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">
                     <DropdownMenuLabel className="text-muted-foreground">Manage</DropdownMenuLabel>
-                    <DropdownMenuSeparator/>
-                    <DropdownMenuItem aria-label="Sign out" onClick={() => signOutMutation.mutate()}>Sign out</DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem aria-label="Sign out" onClick={() => signOutMutation.mutate()}>
+                        Sign out
+                    </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
         </div>

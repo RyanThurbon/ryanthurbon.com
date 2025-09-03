@@ -45,6 +45,7 @@ export const siteConfig = {
     openToWork: true,
     location: "Cape Town, South Africa",
     portraitSrc: "/portrait.jpg",
+    CVSrc: "/cv/RyanThurbonCV.pdf",
     githubProfileImage: "/github.png",
     siteSource: "https://github.com/RyanThurbon/ryanthurbon.com",
     socials: {
@@ -54,6 +55,16 @@ export const siteConfig = {
     } satisfies SocialsConfig,
     achievements: [
         {
+            name: "Entry-Level Python Programmer",
+            description: "Open Education & Development Group",
+            domain: "verify.openedg.org",
+            url: "https://verify.openedg.org/",
+            verificationCode: "FjC4.afZD.sLMK",
+            duration: "2020 - 2021",
+            durationInYears: 1,
+            logo: "/pcep-logo.jpg",
+        },
+        {
             name: "Software Development Fundamentals",
             description: "Microsoft Technology Associate",
             domain: "certiport.com",
@@ -62,16 +73,6 @@ export const siteConfig = {
             duration: "2019 - 2020",
             durationInYears: 1,
             logo: "/microsoft-logo.jpg",
-        },
-        {
-            name: "Entry-Level Python Progrmmer",
-            description: "Open Education & Development Group",
-            domain: "verify.openedg.org",
-            url: "https://verify.openedg.org/",
-            verificationCode: "FjC4.afZD.sLMK",
-            duration: "2020 - 2021",
-            durationInYears: 1,
-            logo: "/pcep-logo.jpg",
         },
     ] satisfies AchievementConfig[],
     education: [

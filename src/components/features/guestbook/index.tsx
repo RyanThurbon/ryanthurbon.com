@@ -9,11 +9,11 @@ export function Guestbook() {
     return (
         <section id="guestbook">
             <div className="flex flex-col gap-y-4">
-                <SectionHeading heading="A place to share all your thoughts!"/>
-                <GuestbookPrompt/>
-                <Suspense fallback={<PendingFallback/>}>
-                    <GuestbookAuth/>
-                    <GuestbookMessageList/>
+                <SectionHeading heading="A place to share all your thoughts!" />
+                <GuestbookPrompt />
+                <Suspense fallback={<PendingFallback />}>
+                    <GuestbookAuth />
+                    <GuestbookMessageList />
                 </Suspense>
             </div>
         </section>
