@@ -17,13 +17,13 @@ const contacts: Contact[] = [
     {
         name: "GitHub",
         href: siteConfig.socials.github,
-        icon: <Icons.github className="size-5 text-muted-foreground group-hover:text-primary transition-colors"/>,
+        icon: <Icons.github className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />,
         ariaLabel: "GitHub profile",
     },
     {
         name: "LinkedIn",
         href: siteConfig.socials.linkedIn,
-        icon: <Icons.linkedIn className="size-5 text-muted-foreground group-hover:text-primary transition-colors"/>,
+        icon: <Icons.linkedIn className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />,
         ariaLabel: "LinkedIn profile",
     },
 ];
@@ -31,7 +31,7 @@ const contacts: Contact[] = [
 export function AboutContactMe() {
     return (
         <div className="flex flex-col gap-y-20 lg:pl-32">
-            <AboutPortrait/>
+            <AboutPortrait />
             <Card className="border-none shadow-none py-0 flex flex-col gap-y-6 text-sm">
                 {contacts.map((contact, index) => (
                     <a
@@ -42,19 +42,17 @@ export function AboutContactMe() {
                         className="group flex items-center gap-x-6 hover:cursor-pointer"
                     >
                         {contact.icon}
-                        <span className="transition-colors group-hover:text-primary">
-                        Follow on {contact.name}
-                    </span>
+                        <span className="transition-colors group-hover:text-primary">Follow on {contact.name}</span>
                     </a>
                 ))}
-                <Separator className="my-1"/>
+                <Separator className="my-1" />
                 <a
                     href={siteConfig.siteSource}
                     target="_blank"
                     aria-label="Send email"
                     className="group flex items-center gap-x-6 cursor-pointer"
                 >
-                    <CodeIcon className="size-5 text-muted-foreground group-hover:text-primary transition-colors"/>
+                    <CodeIcon className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
                     <span className="transition-colors group-hover:text-primary">Site source code</span>
                 </a>
                 <a
@@ -63,7 +61,7 @@ export function AboutContactMe() {
                     aria-label="Send email"
                     className="group flex items-center gap-x-6 cursor-pointer"
                 >
-                    <MailIcon className="size-5 text-muted-foreground group-hover:text-primary transition-colors"/>
+                    <MailIcon className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
                     <span className="transition-colors group-hover:text-primary">{siteConfig.socials.gmail}</span>
                 </a>
             </Card>

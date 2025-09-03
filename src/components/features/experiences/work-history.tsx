@@ -16,9 +16,10 @@ export function WorkHistory() {
                         <a
                             href={siteConfig.CVSrc}
                             target="_blank"
-                            className="flex items-center gap-x-2 hover:cursor-pointer hover:text-primary transition-colors"
+                            aria-label="Download CV"
+                            className="group flex items-center gap-x-2 hover:cursor-pointer hover:text-primary transition-colors"
                         >
-                            <DownloadIcon className="size-4" />
+                            <DownloadIcon className="size-5 text-muted-foreground group-hover:text-primary" />
                             CV
                         </a>
                     </CardTitle>

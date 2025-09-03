@@ -8,7 +8,6 @@ import { Toaster } from "@/components/ui/sonner.tsx";
 import { Footer } from "@/components/shared/footer.tsx";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 interface IRouterContext {
     queryClient: QueryClient;
@@ -72,7 +71,6 @@ function RootDocument({ children }: { children: ReactNode }) {
                 <Toaster position="bottom-center" duration={3000} richColors />
                 <Analytics />
                 <SpeedInsights />
-                <ReactQueryDevtools />
                 <Scripts />
             </body>
         </html>

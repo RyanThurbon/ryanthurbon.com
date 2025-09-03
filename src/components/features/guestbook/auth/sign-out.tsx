@@ -6,7 +6,7 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuSeparator
+    DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu.tsx";
 import { useAuthedUser } from "@/hooks/auth/use-authed-user.ts";
 import { useSignOutMutation } from "@/hooks/auth/use-sign-out-mutation.ts";
