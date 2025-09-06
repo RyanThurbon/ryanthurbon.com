@@ -11,8 +11,8 @@ export type Nav = {
 
 export const nav: Nav[] = [
     {
-        label: "Home",
-        to: "/",
+        label: "Projects",
+        to: "/projects",
     },
     {
         label: "Toolbox",
@@ -40,7 +40,7 @@ export function Navbar() {
             {!isHomePage && (
                 <Link to="/" aria-label="Home" className="absolute left-0">
                     <Avatar className="size-10">
-                        <AvatarImage src={siteConfig.githubProfileImage} alt="Ryan's github profile image" />
+                        <AvatarImage src={siteConfig.githubProfileImage} />
                         <AvatarFallback>RT</AvatarFallback>
                     </Avatar>
                 </Link>

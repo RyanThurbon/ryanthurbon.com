@@ -7,7 +7,7 @@ export function IntroProfilePicture() {
         <div className="inline-block w-fit">
             <Link to="/" aria-label="Home">
                 <Avatar className="size-20">
-                    <AvatarImage src={siteConfig.githubProfileImage} alt="Ryan's github profile image" />
+                    <AvatarImage src={siteConfig.githubProfileImage} />
                     <AvatarFallback>RT</AvatarFallback>
                 </Avatar>
             </Link>

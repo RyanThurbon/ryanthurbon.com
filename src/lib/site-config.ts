@@ -41,6 +41,15 @@ export type ToolboxConfig = {
     svg: string;
 };
 
+export type ProjectsConfig = {
+    name: string;
+    description: string;
+    href: string;
+    stackCategory: string[];
+    preview: string;
+    source: string;
+};
+
 export const siteConfig = {
     openToWork: true,
     location: "Cape Town, South Africa",
@@ -53,6 +62,27 @@ export const siteConfig = {
         gmail: "ryanthurbon3@gmail.com",
         linkedIn: "https://linkedin.com/in/ryan-thurbon",
     } satisfies SocialsConfig,
+    jobs: [] satisfies JobConfig[],
+    projects: [
+        {
+            name: "TechTrove",
+            description:
+                "A personal Hacker News reader that helps me stay up to date with the latest community news. Built with the HN API",
+            href: "https://techtrove-delta.vercel.app/",
+            stackCategory: ["React", "Typescript", "TailwindCSS", "Tanstack"],
+            source: "https://github.com/RyanThurbon/tech-trove",
+            preview: "/projects/tech-trove.png",
+        },
+        {
+            name: "Free2Play",
+            description:
+                "A site that helps gamers discover the best free PC and browser games, powered by the FreeToGame API.",
+            href: "https://free2play-iota.vercel.app/",
+            stackCategory: ["React", "Typescript", "TailwindCSS", "Tanstack"],
+            source: "https://github.com/RyanThurbon/free-2-play",
+            preview: "/projects/free-2-play.png",
+        },
+    ] satisfies ProjectsConfig[],
     achievements: [
         {
             name: "Entry-Level Python Programmer",
@@ -93,7 +123,6 @@ export const siteConfig = {
             logo: "/shs-logo.jpg",
         },
     ] satisfies EducationConfig[],
-    jobs: [] satisfies JobConfig[],
     toolbox: {
         frontend: [
             {

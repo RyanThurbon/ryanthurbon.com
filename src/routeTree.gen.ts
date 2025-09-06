@@ -13,6 +13,7 @@ import { createServerRootRoute } from '@tanstack/react-start/server'
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolboxIndexRouteImport } from './routes/toolbox/index'
+import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as GuestbookIndexRouteImport } from './routes/guestbook/index'
 import { Route as AboutIndexRouteImport } from './routes/about/index'
 import { ServerRoute as ApiAuthSplatServerRouteImport } from './routes/api/auth/$'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const ToolboxIndexRoute = ToolboxIndexRouteImport.update({
   id: '/toolbox/',
   path: '/toolbox/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GuestbookIndexRoute = GuestbookIndexRouteImport.update({
@@ -49,12 +55,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
   '/guestbook': typeof GuestbookIndexRoute
+  '/projects': typeof ProjectsIndexRoute
   '/toolbox': typeof ToolboxIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
   '/guestbook': typeof GuestbookIndexRoute
+  '/projects': typeof ProjectsIndexRoute
   '/toolbox': typeof ToolboxIndexRoute
 }
 export interface FileRoutesById {
@@ -62,20 +70,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about/': typeof AboutIndexRoute
   '/guestbook/': typeof GuestbookIndexRoute
+  '/projects/': typeof ProjectsIndexRoute
   '/toolbox/': typeof ToolboxIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/guestbook' | '/toolbox'
+  fullPaths: '/' | '/about' | '/guestbook' | '/projects' | '/toolbox'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/guestbook' | '/toolbox'
-  id: '__root__' | '/' | '/about/' | '/guestbook/' | '/toolbox/'
+  to: '/' | '/about' | '/guestbook' | '/projects' | '/toolbox'
+  id: '__root__' | '/' | '/about/' | '/guestbook/' | '/projects/' | '/toolbox/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutIndexRoute: typeof AboutIndexRoute
   GuestbookIndexRoute: typeof GuestbookIndexRoute
+  ProjectsIndexRoute: typeof ProjectsIndexRoute
   ToolboxIndexRoute: typeof ToolboxIndexRoute
 }
 export interface FileServerRoutesByFullPath {
@@ -116,6 +126,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToolboxIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/': {
+      id: '/projects/'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guestbook/': {
       id: '/guestbook/'
       path: '/guestbook'
@@ -148,6 +165,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutIndexRoute: AboutIndexRoute,
   GuestbookIndexRoute: GuestbookIndexRoute,
+  ProjectsIndexRoute: ProjectsIndexRoute,
   ToolboxIndexRoute: ToolboxIndexRoute,
 }
 export const routeTree = rootRouteImport
