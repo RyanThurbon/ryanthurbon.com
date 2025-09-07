@@ -19,7 +19,7 @@ export function useSignInMutation() {
             }
 
             await invalidateAuth();
-            toast.success("Signed in! Redirecting...");
+            return toast.success("Signed in! Redirecting...");
         },
         onError: (error) => {
             console.error(error);

@@ -67,7 +67,7 @@ export const siteConfig = {
         {
             name: "TechTrove",
             description:
-                "A personal Hacker News reader that helps me stay up to date with the latest community news. Built with the HN API",
+                "A personal Hacker News reader that helps me stay up to date with the latest community news. Built with the HN API.",
             href: "https://techtrove-delta.vercel.app/",
             stackCategory: ["React", "Typescript", "TailwindCSS", "Tanstack"],
             source: "https://github.com/RyanThurbon/tech-trove",

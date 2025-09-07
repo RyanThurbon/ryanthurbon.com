@@ -16,7 +16,7 @@ export function useSignOutMutation() {
             }
 
             await invalidateAuth();
-            toast.success("Signed out!");
+            return toast.success("Signed out!");
         },
         onError: (error) => {
             console.error(error);
