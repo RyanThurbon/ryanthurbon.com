@@ -16,7 +16,8 @@ export function ProjectShowcaseCard(props: ProjectShowcaseCardProps) {
                 <img
                     src={props.project.preview}
                     className="rounded-sm rounded-b-none aspect-[16/10]"
-                    alt="Project preview"
+                    alt={`${props.project.name} preview`}
+                    decoding="async"
                 />
             </a>
             <CardContent className="px-2 py-2 flex flex-col gap-y-1">
