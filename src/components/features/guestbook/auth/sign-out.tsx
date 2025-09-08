@@ -21,7 +21,7 @@ export function GuestbookSignOut() {
                 <DropdownMenuTrigger className="hover:cursor-pointer" aria-label="Open menu" asChild>
                     <div className="flex items-center gap-x-2 text-muted-foreground">
                         <Avatar className="size-6">
-                            <AvatarImage src={user.image || ""} alt={`${user.name}'s github profile picture`} />
+                            <AvatarImage src={user.image || ""} />
                             <AvatarFallback>{user.name[0]}</AvatarFallback>
                         </Avatar>
                         <div className="text-base md:text-sm flex items-center gap-x-2 min-w-0 flex-1">

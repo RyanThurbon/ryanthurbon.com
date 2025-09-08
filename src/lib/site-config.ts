@@ -65,13 +65,13 @@ export const siteConfig = {
     jobs: [] satisfies JobConfig[],
     projects: [
         {
-            name: "TechTrove",
+            name: "Movify",
             description:
-                "A personal Hacker News reader that helps me stay up to date with the latest community news. Built with the HN API.",
-            href: "https://techtrove-delta.vercel.app/",
+                "A movie and TV show discovery site that lists popular, trending, upcoming, and top-rated movies and shows. Built with the TMDb API.",
+            href: "https://movify-three.vercel.app/",
             stackCategory: ["React", "Typescript", "TailwindCSS", "Tanstack"],
-            source: "https://github.com/RyanThurbon/tech-trove",
-            preview: "/projects/tech-trove.png",
+            source: "https://github.com/RyanThurbon/movify",
+            preview: "/projects/movify.png",
         },
         {
             name: "Free2Play",
@@ -81,6 +81,15 @@ export const siteConfig = {
             stackCategory: ["React", "Typescript", "TailwindCSS", "Tanstack"],
             source: "https://github.com/RyanThurbon/free-2-play",
             preview: "/projects/free-2-play.png",
+        },
+        {
+            name: "TechTrove",
+            description:
+                "A personal Hacker News reader that helps me stay up to date with the latest community news. Built with the HN API.",
+            href: "https://techtrove-delta.vercel.app/",
+            stackCategory: ["React", "Typescript", "TailwindCSS", "Tanstack"],
+            source: "https://github.com/RyanThurbon/tech-trove",
+            preview: "/projects/tech-trove.png",
         },
     ] satisfies ProjectsConfig[],
     achievements: [
