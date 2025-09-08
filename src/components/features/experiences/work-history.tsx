@@ -19,7 +19,7 @@ export function WorkHistory() {
                             aria-label="Download CV"
                             className="group flex items-center gap-x-2 hover:cursor-pointer hover:text-primary transition-colors"
                         >
-                            <DownloadIcon className="size-5 text-muted-foreground group-hover:text-primary" />
+                            <DownloadIcon className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
                             CV
                         </a>
                     </CardTitle>

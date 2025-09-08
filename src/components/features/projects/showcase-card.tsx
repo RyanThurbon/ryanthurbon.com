@@ -31,15 +31,15 @@ export function ProjectShowcaseCard(props: ProjectShowcaseCardProps) {
                     ))}
                 </div>
             </CardContent>
-            <CardFooter className="px-2 flex items-center gap-x-1">
+            <CardFooter className="px-2 flex items-center gap-x-2">
                 <a href={props.project.href} target="_blank">
-                    <Button size="sm" className="text-xs flex items-center gap-x-2" variant="outline">
+                    <Button size="sm" className="text-xs flex items-center gap-x-2 bg-primary/25 hover:bg-primary/50">
                         <GlobeIcon className="size-3" />
                         Website
                     </Button>
                 </a>
                 <a href={props.project.source} target="_blank">
-                    <Button size="sm" className="text-xs flex items-center gap-x-2" variant="outline">
+                    <Button size="sm" className="text-xs flex items-center gap-x-2 bg-primary/25 hover:bg-primary/50">
                         <Icons.github className="size-3" />
                         Source
                     </Button>
