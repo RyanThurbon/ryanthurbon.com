@@ -11,24 +11,26 @@ type ProjectShowcaseCardProps = {
 
 export function ProjectShowcaseCard(props: ProjectShowcaseCardProps) {
     return (
-        <Card className="py-0 pb-2 bg-secondary gap-2 border-none">
-            <a href={props.project.href} className="hover:cursor-pointer" target="_blank">
-                <img
-                    src={props.project.preview}
-                    className="rounded-sm rounded-b-none aspect-[16/10]"
-                    alt={`${props.project.name} preview`}
-                    decoding="async"
-                />
-            </a>
-            <CardContent className="px-2 py-2 flex flex-col gap-y-1">
-                <h2 className="lexend-bold">{props.project.name}</h2>
-                <p className="text-muted-foreground text-sm">{props.project.description}</p>
-                <div className="flex items-center gap-1 flex-wrap mt-2">
-                    {props.project.stackCategory.map((stack, index) => (
-                        <Badge key={index} variant="outline">
-                            {stack}
-                        </Badge>
-                    ))}
+        <Card className="py-2 bg-secondary gap-2 border-none">
+            <CardContent className="px-2 py-2 flex flex-col gap-y-4">
+                <a href={props.project.href} className="hover:cursor-pointer" target="_blank">
+                    <img
+                        src={props.project.preview}
+                        className="rounded-sm aspect-[16/10]"
+                        alt={`${props.project.name} preview`}
+                        decoding="async"
+                    />
+                </a>
+                <div className="flex flex-col gap-y-1 border-t">
+                    <h2 className="lexend-bold mt-2">{props.project.name}</h2>
+                    <p className="text-muted-foreground text-sm">{props.project.description}</p>
+                    <div className="flex items-center gap-1 flex-wrap mt-2">
+                        {props.project.stackCategory.map((stack, index) => (
+                            <Badge key={index} variant="outline">
+                                {stack}
+                            </Badge>
+                        ))}
+                    </div>
                 </div>
             </CardContent>
             <CardFooter className="px-2 flex items-center gap-x-2">
