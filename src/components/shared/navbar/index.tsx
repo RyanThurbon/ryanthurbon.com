@@ -45,7 +45,7 @@ export function Navbar() {
                     </Avatar>
                 </Link>
             )}
-            <nav className="px-3 py-1 rounded-md border bg-secondary">
+            <nav className="px-3 py-1 rounded-full border bg-secondary">
                 <DesktopNavbar nav={nav} />
                 <MobileNavbar nav={nav} />
             </nav>
