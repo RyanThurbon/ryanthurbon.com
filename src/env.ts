@@ -8,7 +8,7 @@ export const env = createEnv({
         SUPABASE_DATABASE_URL: z.string(),
         SUPABASE_DB_PASSWORD: z.string(),
         GITHUB_CLIENT_ID: z.string(),
-        GITHUB_CLIENT_SECRET: z.string()
+        GITHUB_CLIENT_SECRET: z.string(),
     },
     clientPrefix: "VITE_",
     client: {},

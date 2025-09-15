@@ -9,8 +9,8 @@ export const Route = createFileRoute("/")({
 function HomePage() {
     return (
         <div className="flex flex-col gap-y-10">
-            <Introduction/>
-            <Experiences/>
+            <Introduction />
+            <Experiences />
         </div>
     );
 }
