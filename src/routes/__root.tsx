@@ -1,13 +1,13 @@
 import { PageLayout } from "@/components/layouts/page-layout";
+import { Footer } from "@/components/shared/footer.tsx";
 import { Navbar } from "@/components/shared/navbar";
+import { Toaster } from "@/components/ui/sonner.tsx";
 import appCss from "@/styles.css?url";
 import type { QueryClient } from "@tanstack/react-query";
 import { createRootRouteWithContext, HeadContent, Scripts } from "@tanstack/react-router";
-import { ReactNode } from "react";
-import { Toaster } from "@/components/ui/sonner.tsx";
-import { Footer } from "@/components/shared/footer.tsx";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { ReactNode } from "react";
 
 interface IRouterContext {
     queryClient: QueryClient;
@@ -32,6 +32,7 @@ export const Route = createRootRouteWithContext<IRouterContext>()({
             {
                 rel: "preconnect",
                 href: "https://fonts.googleapis.com",
+                crossOrigin: "anonymous",
             },
             {
                 rel: "preconnect",
@@ -40,11 +41,11 @@ export const Route = createRootRouteWithContext<IRouterContext>()({
             },
             {
                 rel: "stylesheet",
-                href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+                href: "https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap",
             },
             {
                 rel: "stylesheet",
-                href: "https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap",
+                href: "https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap",
             },
         ],
     }),
