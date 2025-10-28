@@ -19,6 +19,13 @@ export function Footer() {
                             {item.label}
                         </Link>
                     ))}
+                    <a
+                        href="https://stats.uptimerobot.com/snUQQ2x0WE"
+                        className="hover:text-primary hover:cursor-pointer"
+                        target="_blank"
+                    >
+                        Status
+                    </a>
                 </nav>
                 <p className="text-muted-foreground">
                     &copy; <span>{dayjs().year()}</span> Ryan Thurbon. All rights reserved.

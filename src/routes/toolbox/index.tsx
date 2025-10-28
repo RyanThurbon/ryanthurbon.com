@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Toolbox } from "@/components/features/toolbox";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/toolbox/")({
     component: ToolboxPage,
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/toolbox/")({
 function ToolboxPage() {
     return (
         <>
-            <Toolbox/>
+            <Toolbox />
         </>
     );
 }
