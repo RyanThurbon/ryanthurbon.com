@@ -20,8 +20,7 @@ export const postGuestbookMessageServerFn = createServerFn({ method: "POST" })
     .middleware([ensureAuthenticatedMiddleware])
     .inputValidator(postMessageFormSchema)
     .handler(async ({ context, data }) => {
-        const { user } = context;
-        const { id, name, email, image } = user;
+        const { id, name, email, image } = context.user;
         const { message } = data;
 
         try {
@@ -52,6 +51,8 @@ export const postGuestbookMessageServerFn = createServerFn({ method: "POST" })
                     error: toTaggedError(new GuestbookAlreadySignedError()),
                 };
             }
+
+            console.error(error);
 
             return {
                 success: false,

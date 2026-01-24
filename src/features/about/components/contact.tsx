@@ -18,18 +18,18 @@ const contacts: ContactItem[] = [
         href: siteConfig.socials.github,
         icon: (
             <Icons.github className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
-        ),
+        )
     },
     {
         name: "LinkedIn",
         href: siteConfig.socials.linkedIn,
         icon: (
             <Icons.linkedIn className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
-        ),
-    },
+        )
+    }
 ];
 
-export function Contact() {
+export function AboutContact() {
     return (
         <div className="flex flex-col gap-y-20 lg:pl-32">
             <Portrait />
@@ -52,7 +52,7 @@ export function Contact() {
                 <a
                     href={siteConfig.siteSource}
                     target="_blank"
-                    aria-label="Send email"
+                    aria-label="Site source code"
                     className="group flex items-center gap-x-6 cursor-pointer"
                 >
                     <CodeIcon className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />

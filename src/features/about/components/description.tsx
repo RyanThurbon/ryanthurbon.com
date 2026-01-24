@@ -15,7 +15,9 @@ const aboutSections = [
   	worlds while leveling up technical skills. It’s a mix of creativity and
   	problem-solving that keeps learning fun and practical.`,
 
-    `Curiosity and persistence drive every line of code, turning challenges into opportunities. Clean, maintainable systems and simple, effective solutions are always the aim. When usability comes first, both developers and users benefit — and that’s what makes building software so rewarding.`,
+    `Curiosity and persistence drive every line of code, turning challenges into opportunities. 
+    Clean, maintainable systems and simple, effective solutions are always the aim. 
+    When usability comes first, both developers and users benefit — and that’s what makes building software so rewarding.`
 ];
 
 export function AboutDescription() {

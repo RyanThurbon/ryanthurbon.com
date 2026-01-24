@@ -1,11 +1,5 @@
-import { PendingFallback } from "@/components/shared/fallbacks/pending-fallback.tsx";
-import {
-    GuestbookAuth,
-    GuestbookDescription,
-    GuestbookEntriesList,
-    GuestbookHeading,
-} from "@/features/guestbook/components";
-import { Suspense } from "react";
+import { GuestbookAuth, GuestbookDescription, GuestbookEntriesList, GuestbookHeading } from "@/features/guestbook/components";
+import { SuspenseBoundary } from "@/components/shared/boundaries/suspense-boundary.tsx";
 
 export function Guestbook() {
     return (
@@ -13,10 +7,10 @@ export function Guestbook() {
             <div className="flex flex-col gap-y-4">
                 <GuestbookHeading />
                 <GuestbookDescription />
-                <Suspense fallback={<PendingFallback />}>
+                <SuspenseBoundary>
                     <GuestbookAuth />
                     <GuestbookEntriesList />
-                </Suspense>
+                </SuspenseBoundary>
             </div>
         </section>
     );

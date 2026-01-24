@@ -1,4 +1,4 @@
-import { AboutDescription, AboutHeading, Contact } from "@/features/about/components";
+import { AboutContact, AboutDescription, AboutHeading } from "@/features/about/components";
 
 export function About() {
     return (
@@ -8,7 +8,7 @@ export function About() {
                     <AboutHeading />
                     <AboutDescription />
                 </div>
-                <Contact />
+                <AboutContact />
             </div>
         </section>
     );

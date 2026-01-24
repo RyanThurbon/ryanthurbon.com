@@ -15,21 +15,23 @@ export const getGuestbookEntriesServerFn = createServerFn({ method: "GET" }).han
                 name,
                 email,
                 message,
-                createdAt,
+                createdAt
             })
             .from(guestbookTable)
             .orderBy(desc(guestbookTable.createdAt));
 
         return {
             success: true,
-            data: entries,
+            data: entries
         };
     } catch (error) {
+        console.error(error);
+
         return {
             success: false,
             error: toTaggedError(
-                new GuestbookSelectError("Unable to retrieve guestbook entries", error),
-            ),
+                new GuestbookSelectError("Unable to retrieve guestbook entries", error)
+            )
         };
     }
 });

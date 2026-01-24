@@ -43,7 +43,7 @@ export function PostGuestbookMessageForm() {
                         selector={(state) => [
                             state.canSubmit,
                             state.isSubmitting,
-                            state.isPristine,
+                            state.isPristine
                         ]}
                         children={([canSubmit, isSubmitting, isPristine]) => (
                             <Button

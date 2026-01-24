@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 export function Footer() {
     return (
         <section id="footer">
-            <footer className="flex flex-col gap-y-4 sm:flex-row items-center justify-between mt-20 py-10 border-t text-sm ">
+            <footer className="flex flex-col gap-y-4 sm:flex-row items-center justify-between mt-20 py-10 border-t text-sm">
                 <nav className="flex items-center gap-x-6 gap-y-4 flex-wrap">
                     {navItems.map((item, index) => (
                         <Link
@@ -12,7 +12,7 @@ export function Footer() {
                             key={index}
                             className="hover:text-primary hover:cursor-pointer"
                             activeProps={{
-                                className: "text-primary",
+                                className: "text-primary"
                             }}
                         >
                             {item.label}
