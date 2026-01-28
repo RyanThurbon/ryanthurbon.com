@@ -19,7 +19,7 @@ export function ProjectShowcase({ project }: { project: ProjectItem }) {
                 </a>
                 <div className="flex flex-col gap-y-1 border-t">
                     <h2 className="lexend-bold mt-2">{project.title}</h2>
-                    <p className="text-muted-foreground text-sm">{project.description}</p>
+                    <p className="text-muted-foreground">{project.description}</p>
                     <div className="flex items-center gap-1 flex-wrap mt-2">
                         {project.stack.map((stack, index) => (
                             <Badge key={index} variant="outline">
@@ -33,18 +33,18 @@ export function ProjectShowcase({ project }: { project: ProjectItem }) {
                 <a href={project.url} target="_blank">
                     <Button
                         size="sm"
-                        className="text-xs flex items-center gap-x-2 bg-primary/25 hover:bg-primary/50"
+                        className="text-sm flex items-center gap-x-2 bg-primary/25 hover:bg-primary/50"
                     >
-                        <GlobeIcon className="size-3" />
+                        <GlobeIcon className="size-4" />
                         Website
                     </Button>
                 </a>
                 <a href={project.source} target="_blank">
                     <Button
                         size="sm"
-                        className="text-xs flex items-center gap-x-2 bg-primary/25 hover:bg-primary/50"
+                        className="text-sm flex items-center gap-x-2 bg-primary/25 hover:bg-primary/50"
                     >
-                        <Icons.github className="size-3" />
+                        <Icons.github className="size-4" />
                         Source
                     </Button>
                 </a>

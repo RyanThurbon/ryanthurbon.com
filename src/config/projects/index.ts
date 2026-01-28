@@ -10,11 +10,11 @@ export const projects: ProjectItem[] = [
     {
         title: "Movify",
         description:
-            "A movie and TV show discovery site that lists popular, trending, upcoming, and top-rated movies and shows. Built with the TMDb API.",
+            "A movie and TV show discovery site that lists popular and upcoming movies and shows. Built with the TMDb API.",
         url: "https://movify-three.vercel.app/",
         stack: ["React", "Typescript", "TailwindCSS", "Tanstack"],
         source: "https://github.com/RyanThurbon/movify",
-        preview: "/projects/movify.png",
+        preview: "/projects/movify.png"
     },
     {
         title: "Free2Play",
@@ -23,7 +23,7 @@ export const projects: ProjectItem[] = [
         url: "https://free2play-iota.vercel.app/",
         stack: ["React", "Typescript", "TailwindCSS", "Tanstack"],
         source: "https://github.com/RyanThurbon/free-2-play",
-        preview: "/projects/free-2-play.png",
+        preview: "/projects/free-2-play.png"
     },
     {
         title: "TechTrove",
@@ -32,6 +32,6 @@ export const projects: ProjectItem[] = [
         url: "https://techtrove-delta.vercel.app/",
         stack: ["React", "Typescript", "TailwindCSS", "Tanstack"],
         source: "https://github.com/RyanThurbon/tech-trove",
-        preview: "/projects/tech-trove.png",
-    },
+        preview: "/projects/tech-trove.png"
+    }
 ];
